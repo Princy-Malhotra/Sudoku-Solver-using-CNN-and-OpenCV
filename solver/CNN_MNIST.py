@@ -37,7 +37,7 @@ train_img, test_img, train_labels, test_labels = train_test_split(
 
 
 # Now each image rows and columns are of 28x28 matrix type.
-img_rows, img_columns = 28, 28
+img_rows, img_columns = 28, 28  
 
 # Transform training and testing data to 10 classes in range [0,classes] ; num. of classes = 0 to 9 = 10 classes
 total_classes = 10			# 0 to 9 labels

@@ -28,6 +28,8 @@ from keras.optimizers import SGD
 from sklearn.datasets import fetch_openml
 
 
+dim = 28
+
 # Defing and compile the SGD optimizer and CNN model
 print('\n Compiling model...')
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
@@ -147,11 +149,11 @@ def read_cells(cell, model):
         # plt.imshow(img, cmap='gray')
 
         img = img[4:img.shape[0] - 4, 4:img.shape[1] - 4]
-        img = cv2.resize(img, (28, 28))
+        img = cv2.resize(img, (dim, dim))
         img = 255 - img
 
         img = img.astype(np.float32) / 255.0
-        img = img.reshape(1, 28, 28, 1)
+        img = img.reshape(1, dim, dim, 1)
         # getting predictions and setting the values if probabilities are above 65%
 
         predictions = model.predict(img)
